@@ -15,15 +15,12 @@ const TaskDetails = () => {
   const [bgColor, setBgColor] = useState('bg-white');
 
   useEffect(() => {
-  
     const foundTask = tasks.find(task => String(task.id) === id);
     setCurrentTask(foundTask);
-
 
     if (location.state?.bgColor) {
       setBgColor(location.state.bgColor);
     } else if (foundTask) {
- 
       const index = tasks.findIndex(task => String(task.id) === id);
       const cardColors = ['bg-[#FFF971]', 'bg-[#9FECFF]', 'bg-white'];
       setBgColor(cardColors[index % cardColors.length]);
@@ -31,7 +28,7 @@ const TaskDetails = () => {
   }, [tasks, id, location.state]);
 
   if (!currentTask) {
-    return <div className="min-h-screen p-8">Task not found</div>;
+    return <div className="min-h-screen p-8 text-white">Task not found</div>;
   }
 
   const getTimeLeft = (deadline) => {
@@ -50,7 +47,7 @@ const TaskDetails = () => {
   };
 
   return (
-    <div className={`min-h-screen p-8 ${bgColor} flex flex-col`}>
+    <div className={`min-h-screen p-6 md:p-8 ${bgColor} flex flex-col w-screen max-w-md mx-auto`}> {/* Centering content */}
       <div className="flex gap-4 mb-4">
         <button
           onClick={() => navigate(-1)}
@@ -61,7 +58,7 @@ const TaskDetails = () => {
       </div>
 
       <div className="mb-6">
-        <h2 className="text-7xl text-[#111C2E]">{currentTask.name}</h2>
+        <h2 className="text-5xl sm:text-7xl md:text-6xl text-[#111C2E]">{currentTask.name}</h2>
       </div>
 
       {currentTask.deadline && (
@@ -72,7 +69,7 @@ const TaskDetails = () => {
           </div>
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-4xl text-[#111C2E]">
+              <p className="text-3xl md:text-4xl text-[#111C2E]">
                 {getTimeLeft(currentTask.deadline)}
               </p>
               <p className="text-sm">
@@ -87,7 +84,7 @@ const TaskDetails = () => {
               <img
                 src={user?.imgLink}
                 alt="Assignee"
-                className="w-12 h-12 rounded-full border-2 border-gray-300"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-gray-300"
               />
             </div>
           </div>
@@ -96,24 +93,23 @@ const TaskDetails = () => {
 
       <div className="mb-6">
         <h3 className="text-sm font-bold text-gray-500">Additional Description</h3>
-        <p className="text-xl text-[#111C2E]">{currentTask.description}</p>
+        <p className="text-lg md:text-xl text-[#111C2E]">{currentTask.description}</p>
       </div>
 
       <div className="mb-6 flex flex-col items-start">
         <h3 className="text-sm font-bold text-gray-500">Created</h3>
         <div className="flex items-center gap-2">
-          <p className="text-xl text-[#111C2E]">by {user?.email}</p>
+          <p className="text-lg md:text-xl text-[#111C2E]">by {user?.email}</p>
           <img
             src={user?.imgLink}
             alt="Creator"
-            className="w-6 h-6 rounded-full"
+            className="w-5 h-5 md:w-6 md:h-6 rounded-full"
           />
         </div>
       </div>
 
-  
       {!currentTask.completed && (
-        <div className="mt-auto flex justify-center w-full fixed bottom-20 left-0 p-4">
+        <div className="mt-auto flex justify-center w-full fixed bottom-10  left-0 ">
           <SwipeToComplete
             onComplete={(completed) => {
               if (completed) {

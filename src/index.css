@@ -5,3 +5,9 @@
 body {
   @apply font-inter;
 }
+.bg-white{
+  background-color: transparent!important;
+}
+body{
+background-color: #111C2E;
+}

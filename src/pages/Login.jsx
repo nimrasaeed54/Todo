@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = () => {
     if (!email || !password) return;
     login(email, password);
-    navigate('/home');
+    navigate('/app/home');
   };
 
   return (
