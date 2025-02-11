@@ -28,7 +28,7 @@ const Navbar = ({ onAddTask }) => {
         
         <AddTaskButton 
           navbar={true}
-          onClick={() => navigate("/add-todo")}
+          onClick={() => navigate("/app/add-todo")}
           className="w-10 h-10 flex items-center justify-center bg-[#1E2A47] text-white rounded-full cursor-pointer hover:bg-[#16334a] transition"
           text={<FontAwesomeIcon icon={faPlus} className="text-base" />}
         />

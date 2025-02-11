@@ -50,7 +50,8 @@ const Home = () => {
       </div>
 
       <div className="w-full flex-grow">
-        <TaskBoard tasks={displayedTasks} onTaskClick={handleTaskClick} />
+       
+        <TaskBoard tasks={tasks} onTaskClick={(taskId) => {}} />
       </div>
 
       
