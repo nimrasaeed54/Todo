@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faPlus } from "@fortawesome/free-solid-svg-icons";
 import AddTaskButton from "../UiComponents/AddTaskButton";
 import { TodoContext } from "../context/TodoContext";
-
 const Navbar = ({ onAddTask }) => {
   const navigate = useNavigate();
   const { user } = useContext(TodoContext); 
