@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import Button from '../UiComponents/Button';
 import InputField from '../UiComponents/InputField';
 import { useNavigate } from 'react-router-dom';
-import { TodoContext } from '../Context/TodoContext';
+import { TodoContext } from '../context/TodoContext';
 
 const Login = () => {
   const { login } = useContext(TodoContext);

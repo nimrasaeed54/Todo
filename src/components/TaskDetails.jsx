@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
-import { TodoContext } from '../Context/TodoContext';
+import { TodoContext } from '../context/TodoContext';
 import SwipeToComplete from '../UiComponents/SwipeToComplete';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { TodoContext } from "../Context/TodoContext";
+import { TodoContext } from "../context/TodoContext";
 import AddTaskButton from "../UiComponents/AddTaskButton";
 import TaskBoard from "../components/TaskBoard";
 
